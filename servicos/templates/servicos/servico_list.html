@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Serviço</th>
+        <th scope="col">Ações</th>
+
+      </tr>
+    </thead>
+  <tbody>
+    
+    {% for servico in object_list %}
+    <tr> 
+      <td>{{servico.id}}</td>
+      <td>{{servico.nome}}</td>
+      <td><a href="{% url 'servico-detail' servico.pk %}"><i class="fas fa-info-circle"></i></a></td> 
+    </tr>
+      {% endfor %}
+  </tbody>
+</table>
+<a href="{% url 'servico-create' %}"><button class="btn btn-primary">Adicionar Novo</button> </a>
+<a href="{% url 'gerar-arquivo' %}"><button class="btn btn-warning">gerar arquivo</button> </a>
+
+{% endblock %}

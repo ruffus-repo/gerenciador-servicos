@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Observação</th>
+      </tr>
+    </thead>
+  <tbody>    
+    <tr> 
+      <td>{{object.id}}</td>
+      <td>{{object.nome}}</td>
+      <td>{{object.endereco}}</td>
+      <td>{{object.telefone}}</td>
+      <td>{{object.tipo}}</td>
+      <td>{{object.descricao}}</td>
+
+    </tr>
+  </tbody>
+</table>
+<br>
+<a href="{% url 'prestador-list' %}"><button class="btn btn-primary">Lista</button> </a>
+
+{% endblock %}

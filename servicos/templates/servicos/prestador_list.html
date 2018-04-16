@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Enredeço</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+  <tbody>
+    
+    {% for prestador in object_list %}
+    <tr> 
+      <td>{{prestador.id}}</td>
+      <td>{{prestador.nome}}</td>
+      <td>{{prestador.endereco}}</td>
+      <td>{{prestador.telefone}}</td>
+      <td>{{prestador.tipo}}</td>
+      <td><a href="{% url 'prestador-detail' prestador.pk %}"><i class="fas fa-info-circle"></i></a></td> 
+
+    </tr>
+      {% endfor %}
+   
+
+  </tbody>
+</table>
+{% endblock %}

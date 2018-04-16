@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">descricao</th>
+
+      </tr>
+    </thead>
+  <tbody>    
+    <tr> 
+      <td>{{object.id}}</td>
+      <td>{{object.nome}}</td>
+      {% if object.descricao %}
+      <td>{{object.descricao}}</td>
+      {% else %}
+      <td class="alert alert-danger">sem descricao</td>
+      {% endif %}
+    </tr>
+  </tbody>
+</table>
+<br>
+<a href="{% url 'servico-create' %}"><button class="btn btn-primary">Adicionar Novo</button> </a>
+&nbsp;
+<a href="{% url 'servico-list' %}"><button class="btn btn-primary">Lista serviços</button> </a>
+
+{% endblock %}
